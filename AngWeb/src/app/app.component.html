@@ -1,0 +1,20 @@
+<form #userlogin="ngForm" (ngSubmit)="onClickSubmit(userlogin.value)">
+  <input type="text" name="emailid" placeholder="emailid" ngModel>
+  <br />
+  <input type="password" name="passwd" placeholder="passwd" ngModel>
+  <br />
+  <input type="submit" value="submit">
+</form>
+
+<select>
+  <option [value]="country" *ngFor="let data of apiValues">{{data}}</option>
+</select>
+
+<hr />
+
+<ag-grid-angular style="width: 1200px; height: 500px;"
+                 class="ag-theme-balham" [enableSorting]="true" [enableFilter]="true" [pagination]="true"
+                 [rowData]="rowData"
+                 [columnDefs]="columnDefs">
+</ag-grid-angular>
+<router-outlet></router-outlet>
